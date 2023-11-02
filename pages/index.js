@@ -22,10 +22,14 @@ export default function Home() {
         facingMode={"environment"}
         delay={1000}
         onError={handleError}
-        onScan={handleScan}
-        style={{ width: "300px" }}
+        onResult={handleScan}
+        style={{ width: "100%", height: "auto" }}
       />
-      {data !== "" && <p>{data}</p>}
+      {data !== "" && (
+        <p style={{ width: "300px", margin: "auto", wordBreak: "break-all" }}>
+          {JSON.stringify(data)}
+        </p>
+      )}
     </div>
   );
 }
