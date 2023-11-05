@@ -26,13 +26,14 @@ export default function Home() {
         style={{ width: "100%", height: "auto" }}
       />
 
-      <QrReader
+      {/* <QrReader
         facingMode={"user"}
         delay={1000}
         onError={handleError}
         onResult={handleScan}
         style={{ width: "100%", height: "auto" }}
-      />
+      /> */}
+
       {data !== "" && (
         <p style={{ width: "300px", margin: "auto", wordBreak: "break-all" }}>
           {JSON.stringify(data)}
