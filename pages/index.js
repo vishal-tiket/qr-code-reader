@@ -19,7 +19,9 @@ export default function Home() {
   return (
     <div className="App">
       <QrReader
-        facingMode={"environment"}
+        constraints={{
+          facingMode: "environment",
+        }}
         delay={1000}
         onError={handleError}
         onResult={handleScan}
