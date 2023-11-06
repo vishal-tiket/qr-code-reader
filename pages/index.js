@@ -18,23 +18,19 @@ export default function Home() {
 
   return (
     <div className="App">
-      <QrReader
-        constraints={{
-          facingMode: "environment",
-        }}
-        delay={1000}
-        onError={handleError}
-        onResult={handleScan}
-        style={{ width: "100%", height: "auto" }}
-      />
-
-      {/* <QrReader
-        facingMode={"user"}
-        delay={1000}
-        onError={handleError}
-        onResult={handleScan}
-        style={{ width: "100%", height: "auto" }}
-      /> */}
+      {!!data ? (
+        <button onClick={() => setData("")}>Re-Scan</button>
+      ) : (
+        <QrReader
+          constraints={{
+            facingMode: "environment",
+          }}
+          delay={1000}
+          onError={handleError}
+          onResult={handleScan}
+          style={{ width: "100%", height: "auto" }}
+        />
+      )}
 
       {data !== "" && (
         <p style={{ width: "300px", margin: "auto", wordBreak: "break-all" }}>
